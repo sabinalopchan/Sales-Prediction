@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Prediction</title>
+  </head>
+  <body>
+    <h1>Sales Prediction</h1>
+    <form action="/predict" method="post">
+      <label for="category">Product Category:</label>
+      <input type="text" id="category" name="Product Category" required /><br />
+
+      <label for="subcategory">Product Subcategory:</label>
+      <input
+        type="text"
+        id="subcategory"
+        name="Product Subcategory"
+        required
+      /><br />
+
+      <label for="time">Order Date:</label>
+      <input type="date" id="time" name="Order Date" required /><br />
+
+      <input type="submit" value="Predict Sales" />
+    </form>
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+  </body>
+</html>
